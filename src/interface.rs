@@ -65,6 +65,7 @@ pub enum NHCommand {
     Search(SearchArgs),
     Clean(CleanProxy),
     Completions(CompletionArgs),
+    Man(ManArgs),
 }
 
 #[derive(Args, Debug)]
@@ -250,3 +251,6 @@ pub struct CompletionArgs {
     #[arg(long, short)]
     pub shell: clap_complete::Shell,
 }
+
+#[derive(Debug, Parser)]
+pub struct ManArgs {}
