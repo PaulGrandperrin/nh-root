@@ -27,7 +27,7 @@ impl NHRunnable for interface::OsArgs {
 
 impl OsRebuildArgs {
     pub fn rebuild(&self, rebuild_type: &OsRebuildType) -> Result<()> {
-        if nix::unistd::Uid::effective().is_root() {
+        if nix::unistd::Uid::effective().is_root() && false {
             bail!("Don't run nh os as root. I will call sudo internally as needed");
         }
 
